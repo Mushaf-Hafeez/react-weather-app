@@ -19,6 +19,7 @@ import {
 } from "react"
 import MyError from "./MyError"
 import { useWeatherContext, type Coords } from "@/context/WeatherContext"
+import type { MapMouseEvent } from "maplibre-gl"
 
 const MapEventListener = ({
   setCoords,
@@ -31,7 +32,7 @@ const MapEventListener = ({
   useEffect(() => {
     if (!map) return
 
-    const handleClick = (e) => {
+    const handleClick = (e: MapMouseEvent) => {
       const { lng, lat } = e.lngLat
 
       setCoords({
@@ -46,7 +47,9 @@ const MapEventListener = ({
     }
 
     map.on("click", handleClick)
-    return () => map.off("click", handleClick)
+    return () => {
+      map.off("click", handleClick)
+    }
   }, [map, coords])
 
   return null

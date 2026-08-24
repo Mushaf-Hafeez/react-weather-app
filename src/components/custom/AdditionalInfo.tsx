@@ -6,6 +6,20 @@ import { AdditionalInfoCard } from "./AdditionalInfoCard"
 const AdditionalInfo = () => {
   const { weatherData } = useWeatherContext()
 
+  if (!weatherData) {
+    return (
+      <Card className="h-full flex-1 p-4">
+        <CardHeader className="flex items-center gap-2 p-0">
+          <Logo />
+        </CardHeader>
+
+        <CardContent>
+          <p className="text-zinc-400">Loading weather...</p>
+        </CardContent>
+      </Card>
+    )
+  }
+
   return (
     <Card className="h-full flex-1 p-4">
       <CardHeader className="flex items-center gap-2 p-0">
@@ -18,9 +32,9 @@ const AdditionalInfo = () => {
             <p className="text-zinc-400">Current weather</p>
             <div className="mt-2 flex items-center justify-between font-outfit text-2xl font-semibold">
               <h2>{weatherData?.name}</h2>
-              <h1 className="text-4xl">{`${Math.round(weatherData?.main.temp)}°C`}</h1>
+              <h1 className="text-4xl">{`${Math.round(weatherData.main.temp)}°C`}</h1>
             </div>
-            <p className="text-zinc-400">{`Feels like ${Math.round(weatherData?.main.feels_like)}°C`}</p>
+            <p className="text-zinc-400">{`Feels like ${Math.round(weatherData.main.feels_like)}°C`}</p>
           </CardContent>
         </Card>
 

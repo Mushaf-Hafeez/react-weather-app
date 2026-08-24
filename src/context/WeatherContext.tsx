@@ -11,7 +11,7 @@ export interface Coords {
 interface WeatherContextProps {
   coords: Coords
   setCoords: Dispatch<SetStateAction<Coords>>
-  weatherData: WeatherData
+  weatherData: WeatherData | null
 }
 
 interface WeatherContextProviderProps {
@@ -35,7 +35,9 @@ const WeatherContextProvider = ({ children }: WeatherContextProviderProps) => {
         const data = await getWeatherData(coords.lng, coords.lat)
         setWeatherData(data)
       } catch (error) {
-        console.log(error.message)
+        if (error instanceof Error) {
+          console.log(error.message)
+        }
       }
     }
 
