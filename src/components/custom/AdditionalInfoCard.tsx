@@ -23,7 +23,7 @@ export const AdditionalInfoCard: React.FC<AdditionalInfoCardProps> = ({
   }
 
   return (
-    <Card className="w-full max-w-md">
+    <Card className="w-full">
       <CardHeader>
         <CardTitle className="text-lg font-semibold">
           Additional Information

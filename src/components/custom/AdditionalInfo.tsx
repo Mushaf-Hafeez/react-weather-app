@@ -8,7 +8,7 @@ const AdditionalInfo = () => {
 
   if (!weatherData) {
     return (
-      <Card className="h-full flex-1 p-4">
+      <Card className="h-full w-full flex-1 p-4">
         <CardHeader className="flex items-center gap-2 p-0">
           <Logo />
         </CardHeader>
@@ -21,7 +21,7 @@ const AdditionalInfo = () => {
   }
 
   return (
-    <Card className="h-full flex-1 p-4">
+    <Card className="h-full w-full flex-1 scrollbar-none overflow-y-auto p-4">
       <CardHeader className="flex items-center gap-2 p-0">
         <Logo />
       </CardHeader>

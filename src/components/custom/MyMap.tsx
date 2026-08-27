@@ -91,7 +91,7 @@ const MyMap = () => {
   }
 
   return (
-    <Card className="relative h-full w-3/4 overflow-hidden p-0">
+    <Card className="relative h-1/2 w-full overflow-hidden p-0 lg:h-full lg:w-3/4">
       <Map ref={mapRef} center={[coords.lng, coords.lat]} zoom={2}>
         <MapMarker longitude={coords.lng} latitude={coords.lat}>
           <MarkerContent>
