@@ -4,11 +4,7 @@ import AdditionalInfo from "./components/custom/AdditionalInfo"
 
 const App = () => {
   return (
-    <main className="flex h-screen w-full items-center gap-4 p-4">
-      {/* <h2 className="flex items-center gap-2 font-semibold">
-        <Cloud fill="white" />
-        Weather App
-      </h2> */}
+    <main className="flex h-screen w-full flex-col-reverse items-center gap-4 p-4 lg:flex-row">
       <AdditionalInfo />
       <MyMap />
     </main>
